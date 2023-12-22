@@ -2,6 +2,8 @@
 
 namespace TechCareerBootcamp.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class CountriesController : ControllerBase
     {
         [HttpGet]
@@ -58,6 +60,7 @@ namespace TechCareerBootcamp.Controllers
             "Norway",
             "South Korea"
              };
+
             string result = "";
 
             if (id < 0 || id >= countries.Length)
@@ -67,13 +70,8 @@ namespace TechCareerBootcamp.Controllers
             else
             {      
                 for (int i = 0; i < id; i++)
-                {
-                   
-
-                    
-                    
-                        result += countries[i] + "\n";
-                    
+                {              
+                        result += countries[i] + "\n";                
                 }
 
             }
