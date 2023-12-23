@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechCareerBootcamp", "TechCareerBootCamp\TechCareerBootcamp.csproj", "{F8B23539-1F6F-4191-8FCF-C9552B11EA71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechCareerBootcamp", "TechCareerBootCamp\TechCareerBootcamp.csproj", "{F8B23539-1F6F-4191-8FCF-C9552B11EA71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2", "Task2\Task2.csproj", "{63F8E4DE-A77B-442D-8B29-21E68101E86E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F8B23539-1F6F-4191-8FCF-C9552B11EA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8B23539-1F6F-4191-8FCF-C9552B11EA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8B23539-1F6F-4191-8FCF-C9552B11EA71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63F8E4DE-A77B-442D-8B29-21E68101E86E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F8E4DE-A77B-442D-8B29-21E68101E86E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63F8E4DE-A77B-442D-8B29-21E68101E86E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63F8E4DE-A77B-442D-8B29-21E68101E86E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
