@@ -4,7 +4,7 @@
 
 namespace Task4.Migrations
 {
-    public partial class createJoinManyToMany : Migration
+    public partial class orderWebUserManyToMany : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,30 +12,30 @@ namespace Task4.Migrations
                 name: "OrderWebUser",
                 columns: table => new
                 {
-                    OrderId = table.Column<int>(type: "int", nullable: false),
-                    WebUserId = table.Column<int>(type: "int", nullable: false)
+                    OrdersId = table.Column<int>(type: "int", nullable: false),
+                    WebUsersId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderWebUser", x => new { x.OrderId, x.WebUserId });
+                    table.PrimaryKey("PK_OrderWebUser", x => new { x.OrdersId, x.WebUsersId });
                     table.ForeignKey(
-                        name: "FK_OrderWebUser_Orders_OrderId",
-                        column: x => x.OrderId,
+                        name: "FK_OrderWebUser_Orders_OrdersId",
+                        column: x => x.OrdersId,
                         principalTable: "Orders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrderWebUser_WebUsers_WebUserId",
-                        column: x => x.WebUserId,
+                        name: "FK_OrderWebUser_WebUsers_WebUsersId",
+                        column: x => x.WebUsersId,
                         principalTable: "WebUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderWebUser_WebUserId",
+                name: "IX_OrderWebUser_WebUsersId",
                 table: "OrderWebUser",
-                column: "WebUserId");
+                column: "WebUsersId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

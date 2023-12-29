@@ -24,15 +24,15 @@ namespace Task4.Migrations
 
             modelBuilder.Entity("OrderWebUser", b =>
                 {
-                    b.Property<int>("OrderId")
+                    b.Property<int>("OrdersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("WebUserId")
+                    b.Property<int>("WebUsersId")
                         .HasColumnType("int");
 
-                    b.HasKey("OrderId", "WebUserId");
+                    b.HasKey("OrdersId", "WebUsersId");
 
-                    b.HasIndex("WebUserId");
+                    b.HasIndex("WebUsersId");
 
                     b.ToTable("OrderWebUser");
                 });
@@ -52,9 +52,6 @@ namespace Task4.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("TotalPrice")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WebUserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -81,9 +78,6 @@ namespace Task4.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -97,13 +91,13 @@ namespace Task4.Migrations
                 {
                     b.HasOne("Task4.Models.ORM.Order", null)
                         .WithMany()
-                        .HasForeignKey("OrderId")
+                        .HasForeignKey("OrdersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Task4.Models.ORM.WebUser", null)
                         .WithMany()
-                        .HasForeignKey("WebUserId")
+                        .HasForeignKey("WebUsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

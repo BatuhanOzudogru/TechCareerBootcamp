@@ -5,7 +5,6 @@
         public int OrderNumber { get; set; }
         public int TotalPrice { get; set; }
 
-        public int WebUserId { get; set; }
-        public List<WebUser> WebUser { get; set; }
+        public List<WebUser> WebUsers { get; set; }
     }
 }

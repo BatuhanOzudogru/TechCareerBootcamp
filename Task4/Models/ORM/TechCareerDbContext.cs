@@ -8,7 +8,7 @@ namespace Task4.Models.ORM
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //connection string
-            optionsBuilder.UseSqlServer("Server=DESKTOP-09CNSBC; Database=TechCareerTask3Db; Trusted_Connection =true");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-09CNSBC; Database=Task4Db; Trusted_Connection =true");
         }
 
         public DbSet<Order> Orders { get; set; }

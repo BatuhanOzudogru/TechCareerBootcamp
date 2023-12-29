@@ -18,7 +18,7 @@ namespace Task4.Controllers
         public IActionResult Get()
         {
             
-            var webUsers = _context.WebUsers.ToList();
+            var webUsers = _context.WebUsers.Include(x=>x.Orders).ToList();
             return Ok(webUsers);
         }
     }

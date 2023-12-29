@@ -12,8 +12,8 @@ using Task4.Models.ORM;
 namespace Task4.Migrations
 {
     [DbContext(typeof(TechCareerDbContext))]
-    [Migration("20231229185402_createTables")]
-    partial class createTables
+    [Migration("20231229222924_orderAndWebUserTableCreated")]
+    partial class orderAndWebUserTableCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,9 +41,6 @@ namespace Task4.Migrations
                     b.Property<int>("TotalPrice")
                         .HasColumnType("int");
 
-                    b.Property<int>("WebUserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Orders");
@@ -67,9 +64,6 @@ namespace Task4.Migrations
                     b.Property<string>("EMail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Phone")
                         .IsRequired()
