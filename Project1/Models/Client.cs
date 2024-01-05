@@ -16,12 +16,12 @@ namespace Project1.Models
         //manyToOne company
         
         public Company Company { get; set; }
-        
 
-     
+
+
 
         //manyToMany room
-        
+        public int? RoomId { get; set; }
         public List<Room> Rooms { get; set;}
         
     }

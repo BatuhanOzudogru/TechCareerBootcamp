@@ -18,7 +18,7 @@ namespace Project1.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var clients = _context.Clients.ToList();
+            var clients = _context.Clients.Include(x=> x.Company).Include(x => x.Rooms).ToList();
             return Ok(clients);
 
         }
@@ -43,8 +43,19 @@ namespace Project1.Controllers
             {
                 return NotFound();
             }
-        
+            var room = _context.Rooms
+            .Where(x => x.Id == client.RoomId)
+            .FirstOrDefault();
+
+            if (room == null)
+            {
+               
+                return NotFound("Room not found in the database.");
+            }
+
             client.Company = company;
+            client.Rooms.Clear();
+            client.Rooms.Add(room);
             _context.Clients.Add(client);
             _context.SaveChanges();
 

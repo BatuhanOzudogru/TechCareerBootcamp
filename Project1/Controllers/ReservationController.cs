@@ -19,31 +19,17 @@ namespace Project1.Controllers
         public IActionResult Get()
         {
              var reservations = _context.Clients
-        .Include(c => c.Rooms) 
-        .ToList();
+                    .Include(c => c.Rooms)
+                    .Include(c => c.Company)
+                    .ToList();
 
             return Ok(reservations);
 
         }
 
-        [HttpGet("{id}")]
-        public IActionResult Get(int clientId)
-        {
-            var reservation = _context.Clients
-                            .Include(c => c.Rooms) 
-                            .FirstOrDefault(c => c.Id == clientId);
+      
 
-            if (reservation == null)
-            {
-                return NotFound();
-            }
-
-            var rooms = reservation.Rooms.ToList();
-            return Ok(rooms);
-           
-        }
-
-     //
+   
 
 
     }
