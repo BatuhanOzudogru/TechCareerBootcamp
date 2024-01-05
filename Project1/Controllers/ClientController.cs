@@ -43,6 +43,8 @@ namespace Project1.Controllers
             {
                 return NotFound();
             }
+        
+            client.Company = company;
             _context.Clients.Add(client);
             _context.SaveChanges();
 
